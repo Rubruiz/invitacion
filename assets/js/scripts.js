@@ -70,11 +70,48 @@
   };
 
   const updateWhatsAppLinks = () => {
-    document.querySelectorAll("[data-editable-link='enlace-003']").forEach((link) => {
+    document.querySelectorAll("[data-whatsapp-phone]").forEach((link) => {
       const phone = (link.dataset.whatsappPhone || "").replace(/\D/g, "");
       const message = link.dataset.whatsappMessage || "Confirmo mi asistencia.";
       if (!phone) return;
       link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    });
+  };
+
+  const formatCalendarDate = (date) => {
+    const pad = (value) => String(value).padStart(2, "0");
+    return [
+      date.getFullYear(),
+      pad(date.getMonth() + 1),
+      pad(date.getDate()),
+      "T",
+      pad(date.getHours()),
+      pad(date.getMinutes()),
+      "00",
+    ].join("");
+  };
+
+  const updateCalendarLinks = () => {
+    const eventDate = getEventDate();
+    if (!eventDate) return;
+
+    const eventEnd = new Date(eventDate.getTime() + 3 * 60 * 60 * 1000);
+    document.querySelectorAll("[data-editable-link='enlace-004']").forEach((link) => {
+      const title = link.dataset.calendarTitle || "Baby Shower";
+      const location = link.dataset.calendarLocation || text('[data-editable-text="texto-011"]');
+      const description =
+        link.dataset.calendarDescription ||
+        "Te esperamos para celebrar este dia especial. Recordatorio sugerido: 1 dia antes.";
+      const timezone = link.dataset.calendarTimezone || "America/New_York";
+      const params = new URLSearchParams({
+        action: "TEMPLATE",
+        text: title,
+        dates: `${formatCalendarDate(eventDate)}/${formatCalendarDate(eventEnd)}`,
+        details: `${description}\n\nRecordatorio sugerido: 1 dia antes del evento.`,
+        location,
+        ctz: timezone,
+      });
+      link.href = `https://calendar.google.com/calendar/render?${params.toString()}`;
     });
   };
 
@@ -149,6 +186,7 @@
 
   updateCountdown();
   updateWhatsAppLinks();
+  updateCalendarLinks();
   initAudioToggle();
   stabilizeMobileBackgrounds();
   window.setInterval(updateCountdown, 1000);

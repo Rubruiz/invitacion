@@ -89,6 +89,81 @@ p:has([data-editable-text="texto-023"]) {
   cursor: pointer;
 }
 
+[data-editable-link="enlace-004"] {
+  cursor: pointer;
+}
+
+.template-legacy-embed-hidden {
+  display: none !important;
+}
+
+.template-calendar-button {
+  align-items: center;
+  background: #d4edff;
+  border: 7px solid #5b3a04;
+  border-radius: 18px;
+  box-sizing: border-box;
+  color: #5b3a04;
+  display: flex;
+  font-family: YAFdJqpPvDU_0, Georgia, "Times New Roman", serif;
+  font-size: 52px;
+  font-weight: 700;
+  height: 100%;
+  justify-content: center;
+  line-height: 0.95;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.template-calendar-button:hover,
+.template-calendar-button:focus {
+  color: #5b3a04;
+  text-decoration: none;
+}
+
+.template-confirmation-buttons {
+  display: flex;
+  gap: 34px;
+  height: 100%;
+  width: 100%;
+}
+
+.template-confirmation-button {
+  align-items: center;
+  background: #d4edff;
+  border: 7px solid #5b3a04;
+  border-radius: 18px;
+  box-sizing: border-box;
+  color: #5b3a04;
+  display: flex;
+  flex: 1;
+  font-family: YAFdJqpPvDU_0, Georgia, "Times New Roman", serif;
+  font-size: 46px;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 0.95;
+  padding: 0 18px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+
+.template-confirmation-button:hover,
+.template-confirmation-button:focus {
+  color: #5b3a04;
+  text-decoration: none;
+}
+
+.template-confirmation-button img {
+  bottom: -44px;
+  height: 108px;
+  pointer-events: none;
+  position: absolute;
+  right: -40px;
+  width: 120px;
+}
+
 .boss-countdown {
   align-items: start;
   background: transparent;
