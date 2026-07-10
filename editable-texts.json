@@ -1,0 +1,146 @@
+{
+  "texts": [
+    {
+      "id": "texto-001",
+      "tag": "a",
+      "text": "Mapa de ubicación",
+      "href": "https://maps.app.goo.gl/2uxUi5Q8i4EzYdG58?g_st=iw"
+    },
+    {
+      "id": "texto-002",
+      "tag": "span",
+      "text": "Recepcion"
+    },
+    {
+      "id": "texto-003",
+      "tag": "span",
+      "text": "Mi Baby Shower"
+    },
+    {
+      "id": "texto-004",
+      "tag": "span",
+      "text": "La dulce espera está por terminar, te invito a:"
+    },
+    {
+      "id": "texto-005",
+      "tag": "span",
+      "text": "08"
+    },
+    {
+      "id": "texto-006",
+      "tag": "span",
+      "text": "Sábado"
+    },
+    {
+      "id": "texto-007",
+      "tag": "span",
+      "text": "agosto"
+    },
+    {
+      "id": "texto-008",
+      "tag": "span",
+      "text": "2026"
+    },
+    {
+      "id": "texto-009",
+      "tag": "span",
+      "text": "Deyaneyra y Ruben"
+    },
+    {
+      "id": "texto-010",
+      "tag": "span",
+      "text": "Mis Papis"
+    },
+    {
+      "id": "texto-011",
+      "tag": "span",
+      "text": "20 E Main St, Nanticoke, PA 18634"
+    },
+    {
+      "id": "texto-012",
+      "tag": "span",
+      "text": "¿Cuánto falta?"
+    },
+    {
+      "id": "texto-013",
+      "tag": "span",
+      "text": "Ismael Mathias"
+    },
+    {
+      "id": "texto-014",
+      "tag": "span",
+      "text": "Ismael Mathias"
+    },
+    {
+      "id": "texto-015",
+      "tag": "a",
+      "text": "Confirmar asistencia a mamá",
+      "href": "https://wa.me/10000000000?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20Baby%20Shower."
+    },
+    {
+      "id": "texto-016",
+      "tag": "span",
+      "text": "Si te gustaría hacer la llegada de nuestro bebito mas cómoda puedes traer un presente."
+    },
+    {
+      "id": "texto-017",
+      "tag": "span",
+      "text": "por ser parte de este día especial"
+    },
+    {
+      "id": "texto-018",
+      "tag": "span",
+      "text": "Gracias"
+    },
+    {
+      "id": "texto-019",
+      "tag": "a",
+      "text": "Amazon",
+      "href": "https://www.amazon.com/baby-reg/mercedes-moya-enero-2026-wilkesbarre/3N5MB8GNKFN91?ref_=cm_sw_r_apin_dp_1VE42V6YABDXMP73S6W0&language=en-US%20https://www.amazon.com/baby-reg/mercedes-moya-enero-2026-wilkesbarre/3N5MB8GNKFN91?ref_=cm_sw_r_apin_dp_1VE42V6YABDXMP73S6W0&language=en-US"
+    },
+    {
+      "id": "texto-020",
+      "tag": "span",
+      "text": "6:00 pm"
+    },
+    {
+      "id": "texto-021",
+      "tag": "span",
+      "text": "Nos encantará saber que nos acompañarás, permítenos preparar los detalles confirmando tu asistencia."
+    },
+    {
+      "id": "texto-022",
+      "tag": "span",
+      "text": "Confirmacion"
+    },
+    {
+      "id": "texto-023",
+      "tag": "span",
+      "text": "Hora"
+    },
+    {
+      "id": "texto-024",
+      "tag": "span",
+      "text": "14:00 pm"
+    }
+  ],
+  "links": [
+    {
+      "id": "enlace-001",
+      "text": "Mapa de ubicación",
+      "href": "https://maps.app.goo.gl/2uxUi5Q8i4EzYdG58?g_st=iw"
+    },
+    {
+      "id": "enlace-002",
+      "text": "Amazon",
+      "href": "https://www.amazon.com/baby-reg/mercedes-moya-enero-2026-wilkesbarre/3N5MB8GNKFN91?ref_=cm_sw_r_apin_dp_1VE42V6YABDXMP73S6W0&language=en-US%20https://www.amazon.com/baby-reg/mercedes-moya-enero-2026-wilkesbarre/3N5MB8GNKFN91?ref_=cm_sw_r_apin_dp_1VE42V6YABDXMP73S6W0&language=en-US"
+    },
+    {
+      "id": "enlace-003",
+      "text": "Confirmar asistencia a mamá",
+      "href": "https://wa.me/10000000000?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20Baby%20Shower.",
+      "whatsapp_phone": "10000000000",
+      "whatsapp_message": "Hola, confirmo mi asistencia al Baby Shower."
+    }
+  ]
+}
