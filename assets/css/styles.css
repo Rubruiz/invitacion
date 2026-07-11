@@ -337,10 +337,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  img[src*="image-010-606794bbbd23.gif"] {
-    content: url("../images/image-010-static.png");
-  }
-
   .rGeu6w > div > ._8jGYJw {
     transform: scale(var(--template-scale));
   }
@@ -427,10 +423,6 @@ body {
 }
 
 /* template-mobile-flash-fix */
-img[data-animated-src*='image-010-606794bbbd23.gif'] {
-  content: url('../images/image-010-static.png');
-}
-
 .template-button-gif .Izwocg,
 .template-button-gif .jXCxjw,
 .template-button-gif img {

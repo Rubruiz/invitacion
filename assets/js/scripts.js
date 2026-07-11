@@ -172,7 +172,7 @@
     const update = () => {
       document.querySelectorAll('img[src*="image-010-606794bbbd23.gif"], img[data-animated-src*="image-010-606794bbbd23.gif"]').forEach((image) => {
         if (!image.dataset.animatedSrc) image.dataset.animatedSrc = image.getAttribute("src");
-        image.src = "assets/images/image-010-static.png";
+        image.src = image.dataset.animatedSrc || "assets/images/image-010-606794bbbd23.gif";
       });
     };
 
