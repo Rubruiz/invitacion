@@ -106,7 +106,7 @@ p:has([data-editable-text="texto-023"]) {
   color: #5b3a04;
   display: flex;
   font-family: YAFdJqpPvDU_0, Georgia, "Times New Roman", serif;
-  font-size: 52px;
+  font-size: 45px;
   font-weight: 700;
   height: 100%;
   justify-content: center;
@@ -126,7 +126,7 @@ p:has([data-editable-text="texto-023"]) {
   display: flex;
   gap: 34px;
   height: 100%;
-  width: 100%;
+  width: 1020px;
 }
 
 .template-confirmation-button {
@@ -332,7 +332,7 @@ body {
   }
 
   .rGeu6w > div > ._8jGYJw {
-    transform: translateZ(0) scale(var(--template-scale));
+    transform: scale(var(--template-scale));
   }
 }
 
@@ -342,7 +342,7 @@ body {
   }
 
   .rGeu6w > div > ._8jGYJw {
-    transform: translateZ(0) scale(var(--template-scale));
+    transform: scale(var(--template-scale));
   }
 
   .paNqSg,
@@ -424,4 +424,22 @@ body {
   object-fit: contain;
   pointer-events: none;
   width: 78%;
+}
+
+/* template-mobile-flash-fix */
+img[data-animated-src*='image-010-606794bbbd23.gif'] {
+  content: url('../images/image-010-static.png');
+}
+
+.template-button-gif .Izwocg,
+.template-button-gif .jXCxjw,
+.template-button-gif img {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.rGeu6w,
+.rGeu6w > div,
+._8jGYJw {
+  background-color: #ffffff;
 }
