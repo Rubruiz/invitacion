@@ -173,9 +173,11 @@
       document.querySelectorAll('img[src*="image-010-606794bbbd23.gif"], img[data-animated-src*="image-010-606794bbbd23.gif"]').forEach((image) => {
         // Preserve original animated src in dataset
         if (!image.dataset.animatedSrc) image.dataset.animatedSrc = image.getAttribute("src");
+        // Ensure a static fallback is stored on the element so swapping is deterministic
+        if (!image.dataset.staticSrc) image.dataset.staticSrc = "assets/images/image-010-static.png";
         // Prefer a lightweight static image for small screens to improve performance and visual stability
         if (media.matches) {
-          image.src = image.dataset.staticSrc || "assets/images/image-010-static.png";
+          image.src = image.dataset.staticSrc;
         } else {
           image.src = image.dataset.animatedSrc || "assets/images/image-010-606794bbbd23.gif";
         }
