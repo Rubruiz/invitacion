@@ -435,3 +435,11 @@ body {
 ._8jGYJw {
   background-color: #ffffff;
 }
+
+/* Mobile friendliness: ensure images scale and avoid overflow */
+.rGeu6w > div { margin: 0 auto; }
+img, .paNqSg, .Dt3KRw, .dMHlHA { max-width: 100%; height: auto; display: block; }
+svg { max-width: 100%; height: auto; }
+.template-audio-toggle { position: fixed; bottom: 16px; right: 16px; z-index: 10000; }
+/* Keep root overflow hidden on x-axis to prevent accidental horizontal scroll on narrow viewports */
+html, body, #root { overflow-x: hidden !important; }

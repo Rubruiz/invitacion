@@ -171,8 +171,14 @@
     const media = window.matchMedia("(max-width: 768px)");
     const update = () => {
       document.querySelectorAll('img[src*="image-010-606794bbbd23.gif"], img[data-animated-src*="image-010-606794bbbd23.gif"]').forEach((image) => {
+        // Preserve original animated src in dataset
         if (!image.dataset.animatedSrc) image.dataset.animatedSrc = image.getAttribute("src");
-        image.src = image.dataset.animatedSrc || "assets/images/image-010-606794bbbd23.gif";
+        // Prefer a lightweight static image for small screens to improve performance and visual stability
+        if (media.matches) {
+          image.src = image.dataset.staticSrc || "assets/images/image-010-static.png";
+        } else {
+          image.src = image.dataset.animatedSrc || "assets/images/image-010-606794bbbd23.gif";
+        }
       });
     };
 
