@@ -170,13 +170,22 @@
   const stabilizeMobileBackgrounds = () => {
     const media = window.matchMedia("(max-width: 768px)");
     const update = () => {
-      document.querySelectorAll('img[src*="image-010-606794bbbd23.gif"], img[data-animated-src*="image-010-606794bbbd23.gif"]').forEach((image) => {
-        // Preserve original animated src in dataset
-        if (!image.dataset.animatedSrc) image.dataset.animatedSrc = image.getAttribute("src");
-        // Ensure a static fallback is stored on the element (unused by default) so swapping remains deterministic
-        if (!image.dataset.staticSrc) image.dataset.staticSrc = "assets/images/image-010-static.png";
-        // User requested GIF to play on mobile — always use animated src when available
-        image.src = image.dataset.animatedSrc || "assets/images/image-010-606794bbbd23.gif";
+      // Handle multiple large animated assets the same way (ensure dataset animatedSrc exists and prefer animated src)
+      const animatedNames = [
+        'image-010-606794bbbd23',
+        'image-030-743f769c52ea',
+        'image-034-a15423e23e23'
+      ];
+
+      animatedNames.forEach((name) => {
+        document.querySelectorAll(`img[src*="${name}.gif"], img[data-animated-src*="${name}.gif"]`).forEach((image) => {
+          // Preserve original animated src in dataset
+          if (!image.dataset.animatedSrc) image.dataset.animatedSrc = image.getAttribute("src");
+          // If a dedicated static fallback exists follow the naming convention, otherwise keep the animated as fallback
+          if (!image.dataset.staticSrc) image.dataset.staticSrc = `assets/images/${name}-static.png`;
+          // Force animated src per user request
+          image.src = image.dataset.animatedSrc || `assets/images/${name}.gif`;
+        });
       });
     };
 
