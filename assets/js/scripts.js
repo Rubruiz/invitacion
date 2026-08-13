@@ -95,14 +95,14 @@
     const eventDate = getEventDate();
     if (!eventDate) return;
 
-    const eventEnd = new Date(eventDate.getTime() + 3 * 60 * 60 * 1000);
+    const eventEnd = new Date(eventDate.getTime() + 4 * 60 * 60 * 1000);
     document.querySelectorAll("[data-editable-link='enlace-004']").forEach((link) => {
       const title = link.dataset.calendarTitle || "Baby Shower";
       const location = link.dataset.calendarLocation || text('[data-editable-text="texto-011"]');
       const description =
         link.dataset.calendarDescription ||
         "Te esperamos para celebrar este dia especial. Recordatorio sugerido: 1 dia antes.";
-      const timezone = link.dataset.calendarTimezone || "America/New_York";
+      const timezone = link.dataset.calendarTimezone || "America/La_Paz";
       const params = new URLSearchParams({
         action: "TEMPLATE",
         text: title,
