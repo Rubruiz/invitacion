@@ -345,8 +345,8 @@ body {
   ._7_i_XA,
   .Dt3KRw,
   .dMHlHA {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
   }
 }
 
@@ -436,10 +436,22 @@ body {
   background-color: #ffffff;
 }
 
-/* Mobile friendliness: ensure images scale and avoid overflow */
+/* Mobile repaint fix: Canva absolute images must keep filling their fixed boxes. */
 .rGeu6w > div { margin: 0 auto; }
-img, .paNqSg, .Dt3KRw, .dMHlHA { max-width: 100%; height: auto; display: block; }
-svg { max-width: 100%; height: auto; }
+.paNqSg,
+._7_i_XA,
+.Dt3KRw,
+.dMHlHA {
+  display: block;
+  height: 100% !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+.jXCxjw > img {
+  height: 100% !important;
+  max-width: none !important;
+  width: 100% !important;
+}
 .template-audio-toggle { position: fixed; bottom: 16px; right: 16px; z-index: 10000; }
 /* Keep root overflow hidden on x-axis to prevent accidental horizontal scroll on narrow viewports */
 html, body, #root { overflow-x: hidden !important; }
