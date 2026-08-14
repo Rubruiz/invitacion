@@ -20,6 +20,17 @@
     return element ? element.textContent.trim() : "";
   };
 
+  const keepImagesPainted = () => {
+    document.querySelectorAll("img").forEach((image) => {
+      image.loading = "eager";
+      image.decoding = "sync";
+      image.fetchPriority = "high";
+      if (typeof image.decode === "function" && image.complete) {
+        image.decode().catch(() => {});
+      }
+    });
+  };
+
   const parseTime = (value) => {
     const clean = value.toLowerCase().replace(/\s+/g, " ").trim();
     const match = clean.match(/(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/);
@@ -202,5 +213,6 @@
   updateCalendarLinks();
   initAudioToggle();
   stabilizeMobileBackgrounds();
+  keepImagesPainted();
   window.setInterval(updateCountdown, 1000);
 })();

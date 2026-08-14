@@ -297,11 +297,11 @@ body {
 }
 
 .rGeu6w > div > ._8jGYJw {
-  backface-visibility: hidden;
+  backface-visibility: visible;
   contain: none !important;
   transform: scale(var(--template-scale));
   transform-origin: top left;
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: visible;
 }
 
 #PB55xh5Y0d5c6Fv7 > div > ._8jGYJw {
@@ -451,6 +451,10 @@ body {
   height: 100% !important;
   max-width: none !important;
   width: 100% !important;
+}
+
+.QhExXw.pKfnlA {
+  transform: none !important;
 }
 .template-audio-toggle { position: fixed; bottom: 16px; right: 16px; z-index: 10000; }
 /* Keep root overflow hidden on x-axis to prevent accidental horizontal scroll on narrow viewports */
