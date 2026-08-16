@@ -20,6 +20,58 @@
     return element ? element.textContent.trim() : "";
   };
 
+  const applyResponsiveScale = () => {
+    const templateWidth = 1351;
+    const viewportWidth = Math.max(
+      1,
+      Math.round(
+        (window.visualViewport && window.visualViewport.width) ||
+          document.documentElement.clientWidth ||
+          window.innerWidth ||
+          templateWidth
+      )
+    );
+    const scale = Math.min(1, viewportWidth / templateWidth);
+
+    document.querySelectorAll(".rGeu6w").forEach((section) => {
+      const page = section.firstElementChild;
+      const canvas = page && page.firstElementChild;
+      const baseWidth = canvas ? parseFloat(canvas.style.width) || templateWidth : templateWidth;
+      const baseHeight = canvas ? parseFloat(canvas.style.height) || section.offsetHeight : section.offsetHeight;
+      const scaledWidth = baseWidth * scale;
+      const scaledHeight = baseHeight * scale;
+
+      section.style.setProperty("--template-scale", String(scale));
+      section.style.height = `${scaledHeight}px`;
+
+      if (page) {
+        page.style.flexBasis = `${scaledWidth}px`;
+        page.style.height = `${scaledHeight}px`;
+        page.style.width = `${scaledWidth}px`;
+      }
+
+      if (canvas) {
+        canvas.style.transform = `scale(${scale})`;
+        canvas.style.transformOrigin = "top left";
+      }
+    });
+  };
+
+  const initResponsiveScale = () => {
+    let frame = 0;
+    const schedule = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(applyResponsiveScale);
+    };
+
+    applyResponsiveScale();
+    window.addEventListener("resize", schedule, { passive: true });
+    window.addEventListener("orientationchange", schedule, { passive: true });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", schedule, { passive: true });
+    }
+  };
+
   const keepImagesPainted = () => {
     document.querySelectorAll("img").forEach((image) => {
       image.loading = "eager";
@@ -208,6 +260,7 @@
     }
   };
 
+  initResponsiveScale();
   updateCountdown();
   updateWhatsAppLinks();
   updateCalendarLinks();
