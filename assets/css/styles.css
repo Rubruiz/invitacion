@@ -244,12 +244,16 @@ body,
 
 body {
   background: #fff;
+  touch-action: pan-y;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 ._8OlyIw,
 .yIDCqA {
   height: auto !important;
   min-height: 100vh;
+  min-height: 100svh;
   overflow: visible !important;
 }
 
@@ -258,6 +262,7 @@ body {
 .KYQZFA {
   height: auto !important;
   min-height: 100vh;
+  min-height: 100svh;
   overflow: visible !important;
 }
 
@@ -322,9 +327,17 @@ body {
 }
 
 @-moz-document url-prefix() {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    scrollbar-width: thin;
+  }
+
   ._8jGYJw {
     contain: none !important;
     overflow: hidden !important;
+    transform-style: flat;
   }
 
   .rGeu6w {
@@ -333,6 +346,39 @@ body {
 
   .rGeu6w > div > ._8jGYJw {
     transform: scale(var(--template-scale));
+  }
+
+  .paNqSg,
+  ._7_i_XA,
+  .Dt3KRw,
+  .dMHlHA,
+  .jXCxjw > img {
+    image-rendering: auto;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  html,
+  body,
+  #root {
+    min-height: -webkit-fill-available;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  ._8OlyIw,
+  .yIDCqA,
+  ._4KoDHA,
+  .ZRRuDw,
+  .KYQZFA {
+    min-height: -webkit-fill-available;
+  }
+
+  .template-audio-toggle {
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: max(16px, env(safe-area-inset-right));
   }
 }
 
@@ -402,6 +448,7 @@ body {
 .boss-audio-control__button {
   align-items: center;
   appearance: none;
+  -webkit-appearance: none;
   background: transparent;
   border: 0;
   cursor: pointer;

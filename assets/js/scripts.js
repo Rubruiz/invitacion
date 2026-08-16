@@ -24,7 +24,7 @@
     document.querySelectorAll("img").forEach((image) => {
       image.loading = "eager";
       image.decoding = "sync";
-      image.fetchPriority = "high";
+      if ("fetchPriority" in image) image.fetchPriority = "high";
       if (typeof image.decode === "function" && image.complete) {
         image.decode().catch(() => {});
       }
