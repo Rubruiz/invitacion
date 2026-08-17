@@ -380,6 +380,22 @@ body {
     bottom: max(16px, env(safe-area-inset-bottom));
     right: max(16px, env(safe-area-inset-right));
   }
+
+  @media (max-width: 480px) {
+    [data-editable-text="texto-011"] {
+      display: inline-block !important;
+      font-size: 0.94em !important;
+      line-height: 0.92 !important;
+      transform: translateY(-0.08em);
+    }
+
+    [data-editable-text="texto-016"] {
+      display: inline-block !important;
+      font-size: 0.88em !important;
+      line-height: 0.9 !important;
+      transform: translateY(-0.18em);
+    }
+  }
 }
 
 @media (max-width: 768px) {
